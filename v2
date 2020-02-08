@@ -1,0 +1,68 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//Menu option
+string i_am_a_rectangle = "Rectangle";
+string i_am_a_triangle = "Triangle";
+string i_am_a_circle = "Circle";
+string i_want_to_quit = "Quit";
+string i_am_a_foot = " ft";
+
+
+int main() {
+
+	//Display
+	cout << "Architect Area Calculator:" << endl;
+	cout << "**************************" << endl;
+	cout << "1." << i_am_a_rectangle << endl;
+	cout << "2." << i_am_a_triangle << endl;
+	cout << "3." << i_am_a_circle << endl;
+	cout << "4." << i_want_to_quit << endl << endl << endl << endl;
+
+	int user_options = 4;
+	bool user_done = true;
+	bool try_again = false;
+	char keep_going;
+
+
+	//User input
+	cout << "Please enter a menu item (1-4) > ";
+	cin >> user_options;
+	cout << endl;
+	cout << endl;
+
+
+int user_input_measurements = 1;
+
+double Rectangle;
+
+
+
+	cout << "Rectangle:" << endl;
+
+	double area_of_rectangle, length_of_rectangle, width_of_rectangle;
+
+	cout << "Please enter the length > "; cin >> length_of_rectangle;
+
+	cout << "Please enter the width > "; cin >> width_of_rectangle;
+	cout << endl;
+
+	if (user_input_measurements == 1) {
+
+		if (length_of_rectangle <= 0) {
+
+			cout << "Error, please select a valid number." << endl; 
+
+		}
+		else {
+
+			area_of_rectangle = length_of_rectangle * width_of_rectangle;
+
+			cout << fixed << showpoint << setprecision(2);
+
+			cout << "Area = " << area_of_rectangle << "sq" << i_am_a_foot << endl;
+		}
+return 0;
+	}
+}
