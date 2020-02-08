@@ -22,7 +22,7 @@ int main() {
 
 	int user_options = 4;
 	bool user_done = true;
-	bool try_again = false;
+	bool try_again = true;
 	char keep_going;
 
 
