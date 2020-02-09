@@ -1,68 +1,142 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip>  
 using namespace std;
+int main()
+{
+    const float PI = 3.14159;
+    int user_choice;
 
-//Menu option
-string i_am_a_rectangle = "Rectangle";
-string i_am_a_triangle = "Triangle";
-string i_am_a_circle = "Circle";
-string i_want_to_quit = "Quit";
-string i_am_a_foot = " ft";
+    cout << "Architect Area Calculator:"
+         << "\n*************************\n" 
+         << "   1. Rectangle\n"
+         << "   2. Triangle\n"
+         << "   3. Circle\n"
+         << "   4. Quit\n"
+         << "\nPlease enter a menu item (1-4): ";
+    cin >> user_choice;
+    cout << endl;
 
+    switch (user_choice)
+    {
+        float area;
 
-int main() {
+        case 1:
+        
+        float width, length;
+            cout << "Rectangle ";
+            cout << "What is the length? " << endl;
+            cin >> length;
 
-	//Display
-	cout << "Architect Area Calculator:" << endl;
-	cout << "**************************" << endl;
-	cout << "1." << i_am_a_rectangle << endl;
-	cout << "2." << i_am_a_triangle << endl;
-	cout << "3." << i_am_a_circle << endl;
-	cout << "4." << i_want_to_quit << endl << endl << endl << endl;
+            if (length > 0) 
+            {
+                cout << "What is the width? " << endl;
+                cin >> width;
 
-	int user_options = 4;
-	bool user_done = true;
-	bool try_again = true;
-	char keep_going;
+                if (width > 0) {
+                    area = length * width;
+                    
+                    cout << fixed << showpoint << setprecision(2);
+                    
+                    cout << "The area of rectangle is " 
+                         << area 
+                         << endl;
+                }
+                else {
+                    cout << "\nWe're sorry. \nWidth must be greater than 0." 
+                    << endl;
+                    cout << "Rerun the program and try again." << endl;
+                }
+                
+            }
+            else
+            {
+                cout << "\nWe're sorry. \nLength must be greater that 0." << endl;
+                cout << "Rerun the program and try again." << endl;
+            }
+            break;
 
+      
+        case 2:
 
-	//User input
-	cout << "Please enter a menu item (1-4) > ";
-	cin >> user_options;
-	cout << endl;
-	cout << endl;
+        float height,
+                  base;
 
+            cout << "What is the base? ";
+            cin >> base;
 
-int user_input_measurements = 1;
+            if (base > 0)
+            {
+                cout << "What is the height? ";
+                cin >> height;
 
-double Rectangle;
+                if (height > 0) 
+                {
+                    area = (base * height) * .5;
+                   
+                    cout << fixed << showpoint << setprecision(2);
+                    
+                    cout << "Area of triangle is " 
+                         << area 
+                         << endl;
+                         
+                }
+                else 
+                {
+                    cout << "\nWe're sorry. \nHeight must "
+                         << " be greater than 0.\n"
+                         << "Rerun the program and "
+                         << "try again." 
+                         << endl;
+                }
+                
+            }
+            else
+            {
+                cout << "\nWe're sorry. \nBase length must"
+                     << " be greater than 0.\n"
+                     << "Rerun the program and try again." << endl;
+            }
+            break;
 
+        case 3:
 
+                int radius;
 
-	cout << "Rectangle:" << endl;
+            cout << "What is the radius: ";
+            cin >> radius;
 
-	double area_of_rectangle, length_of_rectangle, width_of_rectangle;
+            if (radius < 0)
+            {
+                cout << "We're sorry. \nThe radius must be "
+                     << "a positive number.\n"
+                     << "Rerun the program and try again.\n" 
+                     << endl;
+            }
+            else
+            {
+                area = PI * radius * radius;
+               
+                cout << fixed << showpoint << setprecision(2);
 
-	cout << "Please enter the length > "; cin >> length_of_rectangle;
+                cout << "The area of the circle is  " 
+                     <<  area << endl;
+            }
+            break;
+            
+            
+            case 4:
+            cout << "Good-bye." << endl;
+            break;
+    
+        default:
+            cout << "We're sorry. \nYour choice must "
+                 << "between 1 and 4.\n"
+                 << "Rerun the program and try again." 
+                 << endl;
+            break;
+    }
 
-	cout << "Please enter the width > "; cin >> width_of_rectangle;
-	cout << endl;
+    cout << endl;
 
-	if (user_input_measurements == 1) {
-
-		if (length_of_rectangle <= 0) {
-
-			cout << "Error, please select a valid number." << endl; 
-
-		}
-		else {
-
-			area_of_rectangle = length_of_rectangle * width_of_rectangle;
-
-			cout << fixed << showpoint << setprecision(2);
-
-			cout << "Area = " << area_of_rectangle << "sq" << i_am_a_foot << endl;
-		}
-return 0;
-	}
+    return 0;
 }
